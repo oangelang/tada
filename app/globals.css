@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: #FFFDF5;
+  --color-foreground: #1A1A2E;
+  --color-primary: #FF6B2B;
+  --color-primary-dark: #E0501A;
+  --color-primary-light: #FFF3EC;
+  --color-border-light: #F0EDE4;
+  --color-border-mid: #E2DFD5;
+  --color-muted: #8B8680;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-yellow: #FFD23F;
+  --color-green: #2EC866;
+  --color-blue: #4A7BF7;
+  --color-orange: #FF6B2B;
+  --color-pink: #FF5DA0;
+  --color-purple: #8B6CF6;
+
+  --color-tag-selfcare-bg: #FFE0F0;
+  --color-tag-selfcare-text: #B8245A;
+  --color-tag-selfcare-dot: #FF5DA0;
+
+  --color-tag-work-bg: #DFEAFF;
+  --color-tag-work-text: #1D4ED8;
+  --color-tag-work-dot: #4A7BF7;
+
+  --color-tag-home-bg: #D4F5E0;
+  --color-tag-home-text: #15803D;
+  --color-tag-home-dot: #2EC866;
+
+  --color-tag-social-bg: #FFF1CC;
+  --color-tag-social-text: #A16207;
+  --color-tag-social-dot: #FFB800;
+
+  --color-tag-other-bg: #EDE9FE;
+  --color-tag-other-text: #6D28D9;
+  --color-tag-other-dot: #8B6CF6;
+
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Nunito", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10px, -15px) scale(1.05); }
+  66% { transform: translate(-8px, 8px) scale(0.97); }
+}
+
+@keyframes blob-float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-12px, 10px) scale(1.03) rotate(5deg); }
+}
+
+.blob-float { animation: blob-float 8s ease-in-out infinite; }
+.blob-float-slow { animation: blob-float-slow 12s ease-in-out infinite; }
+.blob-float-delay { animation: blob-float 10s ease-in-out 2s infinite; }
+
+.card {
+  background: white;
+  border-radius: 20px;
+  border: 2px solid var(--color-border-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
